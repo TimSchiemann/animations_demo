@@ -1,0 +1,22 @@
+@layer local {
+    @property --background-color {
+        syntax: "<color>";
+        inherits: true;
+        initial-value:  #ffc300;
+    }
+
+    body {
+        display: grid;
+        place-content: center;
+        gap: 1rem;
+    }
+    .box {
+        transition: background-color 1000ms ease-in-out;
+        background-color: var(--background-color);
+
+        &:hover,
+        &:focus-visible {
+            --background-color: var(--color-blue);
+        }
+    }
+}

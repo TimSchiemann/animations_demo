@@ -1,0 +1,33 @@
+@layer local {
+    /*@property --background-color {*/
+    /*    syntax: "<color>";*/
+    /*    inherits: true;*/
+    /*    initial-value:  #ffc300;*/
+    /*}*/
+
+    body {
+        display: grid;
+        place-content: center;
+        gap: 1rem;
+    }
+    .box {
+        --background-color: var(--color-orange);
+        background-color: var(--background-color);
+        &.active {
+            animation-fill-mode: forwards;
+
+            animation-name: change-background-color;
+            animation-duration: 1000ms;
+            animation-timing-function: ease-in-out;
+        }
+    }
+
+    @keyframes change-background-color {
+        0% {
+            --background-color: var(--color-orange);
+        }
+        100% {
+            --background-color: var(--color-blue);
+        }
+    }
+}
