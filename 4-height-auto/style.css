@@ -1,0 +1,23 @@
+@layer local {
+    body {
+        display: grid;
+        place-content: center;
+        gap: 1rem;
+    }
+    .box {
+        background-color: var(--color-orange);
+
+        height: 0;
+        overflow: clip;
+
+        /*interpolate-size: allow-keywords;*/
+        transition: height 2000ms ease-in-out;
+        &.active {
+            height: auto;
+            /*height: calc-size(auto, size);*/
+        }
+        p {
+            color: black;
+        }
+    }
+}
