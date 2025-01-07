@@ -1,0 +1,30 @@
+@layer local {
+    body {
+        padding: 2rem;
+        display: grid;
+        place-content: center;
+    }
+    section {
+        height: 70vh;
+        overflow-y: scroll;
+        border: 2px solid red;
+        scrollbar-width: thin;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 5rem;
+    }
+    .box {
+        background-color: var(--color-orange);
+        color: black;
+        font-size: 4rem;
+        height: 300px;
+        &.is-intersecting {
+            background-color: var(--color-blue);
+        }
+    }
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+}
