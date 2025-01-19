@@ -8,17 +8,17 @@
         color: black;
     }
     .box {
+        overflow: hidden;
         background-color: var(--color-orange);
         transition: opacity 2s ease-in-out, background-color 2s ease-in-out, display 2s ease-in-out;
         transition-behavior: allow-discrete;
+
         @starting-style {
             opacity: 0;
-            scale: 1.1;
             background-color: var(--color-blue);
         }
         &.active {
             opacity: 0;
-            background-color: yellow;
             display: none;
         }
     }
