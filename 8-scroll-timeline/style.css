@@ -1,0 +1,66 @@
+@layer local {
+    body {
+        padding: 2rem;
+        display: grid;
+        place-content: center;
+        gap: 4rem;
+    }
+    .box {
+        background-color: var(--color-orange);
+        color: black;
+        font-size: 4rem;
+        height: 300px;
+
+        animation: animate-in;
+        animation-timeline: view();
+        /*animation-range: entry;*/
+    }
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+    .progress-bar {
+        height: 2rem;
+        width: 100%;
+        background-color: var(--color-blue);
+        position: fixed;
+        left: 0;
+        top: 0;
+        transform-origin: 0 50%;
+        z-index: 1;
+
+        animation: progress-bar;
+        animation-timeline: scroll();
+    }
+
+    @keyframes animate-in {
+        0% {
+            opacity: 0;
+            scale: 0;
+        }
+        100% {
+            opacity: 1;
+            scale: 100%;
+        }
+    }
+    @keyframes animate-out {
+        0% {
+            opacity: 100%;
+            scale: 1;
+        }
+        100% {
+            opacity: 0;
+            scale: 0;
+        }
+    }
+
+    @keyframes progress-bar {
+        0% {
+            transform: scaleX(0);
+        }
+        100% {
+            transform: scaleX(1);
+        }
+    }
+}
