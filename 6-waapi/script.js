@@ -33,5 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     resetButton.addEventListener('click', () => {
         animation.currentTime = 0;
+        animation.pause();
     })
 });
